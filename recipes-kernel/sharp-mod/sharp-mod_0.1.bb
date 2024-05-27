@@ -18,3 +18,5 @@ S = "${WORKDIR}"
 RPROVIDES:${KERNELVERSION} += "kernel-module-sharp"
 
 FILES:${KERNELVERSION} += "${base_libdir}/modules/"
+
+KERNEL_MODULE_AUTOLOAD += "sharp"

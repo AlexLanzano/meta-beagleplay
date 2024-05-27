@@ -18,3 +18,5 @@ S = "${WORKDIR}"
 RPROVIDES:${KERNELVERSION} += "kernel-module-bmi270"
 
 FILES:${KERNELVERSION} += "${base_libdir}/modules/"
+
+KERNEL_MODULE_AUTOLOAD += "bmi270"
