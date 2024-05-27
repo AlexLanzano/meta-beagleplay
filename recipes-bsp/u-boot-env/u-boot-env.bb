@@ -14,7 +14,7 @@ FILES:${PN} += "/boot"
 FILES:${PN} += "/boot/u-boot-env.bin"
 
 do_compile() {
-    mkenvimage -s 0x400 -o u-boot-env.bin u-boot-env.txt
+    mkenvimage -s 0x1f000 -o u-boot-env.bin u-boot-env.txt
 }
 
 do_install() {
