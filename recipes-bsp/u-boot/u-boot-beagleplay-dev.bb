@@ -27,5 +27,3 @@ do_create_tispl_bin_symlink() {
 }
 
 addtask do_create_tispl_bin_symlink before do_install after do_compile
-
-# do_install[depends] += "u-boot-beagleplay-dev:do_create_tispl_bin_symlink"
