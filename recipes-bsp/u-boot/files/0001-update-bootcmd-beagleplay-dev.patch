@@ -1,5 +1,5 @@
 diff --git a/configs/am62x_beagleplay_a53_defconfig b/configs/am62x_beagleplay_a53_defconfig
-index 4f1be1df59..e4026cf634 100644
+index 79c82d1ff7..40fe1e29ee 100644
 --- a/configs/am62x_beagleplay_a53_defconfig
 +++ b/configs/am62x_beagleplay_a53_defconfig
 @@ -35,7 +35,7 @@ CONFIG_AUTOBOOT_KEYED=y
@@ -11,11 +11,10 @@ index 4f1be1df59..e4026cf634 100644
  CONFIG_BOARD_LATE_INIT=y
  CONFIG_SPL_MAX_SIZE=0x58000
  CONFIG_SPL_SYS_REPORT_STACK_F_USAGE=y
-@@ -121,3 +121,13 @@ CONFIG_EXT4_WRITE=y
- CONFIG_FS_FAT_MAX_CLUSTSIZE=16384
- CONFIG_LZO=y
- CONFIG_EFI_SET_TIME=y
-+
+@@ -128,3 +128,14 @@ CONFIG_EFI_SET_TIME=y
+ 
+ #include <configs/k3_efi_capsule.config>
+ #include <configs/am62x_a53_usbdfu.config>
 +CONFIG_ENV_SUPPORT=y
 +CONFIG_CMD_SAVEENV=y
 +CONFIG_SAVEENV=y
@@ -25,3 +24,5 @@ index 4f1be1df59..e4026cf634 100644
 +CONFIG_ENV_EXT4_INTERFACE="mmc"
 +CONFIG_ENV_EXT4_DEVICE_AND_PART="1:2"
 +CONFIG_ENV_EXT4_FILE="/boot/u-boot-env.bin"
++CONFIG_FS_EXT4=y
++CONFIG_SPL_FS_EXT4=y
