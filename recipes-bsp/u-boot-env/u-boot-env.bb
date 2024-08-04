@@ -14,7 +14,11 @@ FILES:${PN} += "/boot"
 FILES:${PN} += "/boot/u-boot-env.bin"
 
 do_compile() {
-    mkenvimage -s 0x1f000 -o u-boot-env.bin u-boot-env.txt
+    cp u-boot-env.txt u-boot-env.txt.tmp
+    sed -i 's/BEAGLEPLAY_IPADDR/${BEAGLEPLAY_IPADDR}/g' u-boot-env.txt.tmp
+    sed -i 's/BEAGLEPLAY_HOSTIP/${BEAGLEPLAY_HOSTIP}/g' u-boot-env.txt.tmp
+    sed -i 's/BEAGLEPLAY_NFSROOT/${BEAGLEPLAY_NFSROOT}/g' u-boot-env.txt.tmp
+    mkenvimage -s 0x1f000 -o u-boot-env.bin u-boot-env.txt.tmp
 }
 
 do_install() {
