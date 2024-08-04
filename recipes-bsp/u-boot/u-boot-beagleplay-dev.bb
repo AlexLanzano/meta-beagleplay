@@ -8,7 +8,7 @@ UBOOT_GIT_URI = "git://source.denx.de/u-boot/u-boot.git"
 UBOOT_GIT_PROTOCOL = "https"
 SRCREV = "123f6f75dfcb5f88d821e4eb91ddedfb7718d601"
 
-SRC_URI += "file://0001-update-bootcmd-beagleplay-dev.patch"
+SRC_URI += "file://extra-u-boot-configs.cfg"
 
 do_create_tispl_bin_symlink() {
     if [ -e ${B}/tispl.bin_unsigned ]; then
