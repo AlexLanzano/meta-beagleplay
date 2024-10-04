@@ -19,4 +19,20 @@ do_create_tispl_bin_symlink() {
     fi
 }
 
+do_create_u_boot_elf_symlink() {
+    if [ -e ${B}/u-boot ]; then
+        ln -sf ${B}/u-boot ${B}/u-boot.elf
+    else
+        echo "Source file does not exist: ${B}/u-boot"
+        exit 1
+    fi
+}
+
+do_deploy:append(){
+    if [ -e ${B}/u-boot.elf ]; then
+        install -D -m 644 ${B}/u-boot.elf ${DEPLOYDIR}/u-boot.elf
+    fi
+}
+
 addtask do_create_tispl_bin_symlink before do_install after do_compile
+addtask do_create_u_boot_elf_symlink before do_install after do_compile
