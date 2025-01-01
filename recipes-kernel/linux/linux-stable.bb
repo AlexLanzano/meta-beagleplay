@@ -7,7 +7,7 @@ require recipes-kernel/linux/linux-beagleplay.inc
 require recipes-kernel/linux/linux-beagleyai.inc
 
 
-SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protocol=git;branch=linux-6.11.y \
+SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git;protocol=git;branch=linux-6.12.y \
            file://defconfig "
 
 SRCREV="${AUTOREV}"
@@ -16,4 +16,4 @@ PV = "${LINUX_VERSION}"
 
 S = "${WORKDIR}/git"
 
-LINUX_VERSION ?= "6.11"
+LINUX_VERSION ?= "6.12"
